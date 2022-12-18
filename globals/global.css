@@ -1,0 +1,223 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Patrick Hand', cursive;
+    text-shadow: 0px 0px 3px #000;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container { 
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 12vh 76vh 12vh;
+    background-color: #fff;
+} */
+
+
+
+header { /* Headerin muotoilu alkaa */
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: sticky;
+
+
+}
+
+header>h1 {
+    width: 90%;
+    text-align: left;
+}
+
+header img {
+    height: 100px;
+
+}
+
+header, footer {
+    grid-column: 1/3;
+}
+
+header, footer { /* Tasainen padding headerin ja footerin välille */
+    background-color: #46c24a;
+    padding: 0px 2em;
+}
+
+.fa-solid, .fa-regular, .fa-light, .fa-thin{ /* FontAwesome ikonit */
+    font-family: 'FontAwesome';
+    font-size: 35px;
+}
+
+.fa-house-chimney, .fa-circle-info{ /* Home ja Info ikonit */
+    font-size: 50px;
+    margin-right: 55px;
+}
+
+.notBlue { /* a linkki värjäsi iconin värin siniseksi niin tämä jättää alkuperäisen värin*/
+    color: #ffffff;
+}
+
+.notBlue:hover {
+    color: #a05c9d;
+}
+
+
+
+nav { /* Navigoinnin muotoilu alkaa */
+    grid-column: 1/2;
+    grid-row: 2/3;
+    list-style: none;
+    background-color: #6bd06e;
+}
+
+nav h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+
+}
+
+nav ul>li {
+    display: inline-block;
+    margin: 8px auto 8px auto;
+    width: 100%;
+
+    min-height: 0;
+    flex: 1;
+}
+
+nav li>div { /* Visa valinta muotoilu*/
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #369f39;
+    width: 90%; 
+    font-size: 2em;
+    border-radius: 3px; 
+    flex:1 1 0; 
+    user-select: none;
+}
+
+nav li>div:hover {  /* Visa valinta napit vaihtavat väriä kun käyttäjä vie hiiren niiden yli */
+    cursor: pointer;
+    background-color: #a05c9d;
+    opacity: 95%;
+    text-shadow: 0px 0px 2px rgb(255, 245, 46);
+    box-shadow: 2px 2px 10px #fff,
+                -2px -2px 10px #fff,
+                -2px 2px 10px #fff,
+                2px -2px 10px #fff;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#navbar a:visited {
+    color: #fff;
+}
+
+
+
+article { /* Artiklen muotoilu alkaa */
+    grid-row: 2/3;
+}
+
+
+
+footer { /* Footerin muotoilu alkaa */
+    grid-column: 1/3;
+    grid-row: 3/4;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 50px;
+    font-size: 2em;
+    overflow: hidden;
+}
+
+
+
+/* Responsiivisuuden muotoilu alkaa */
+.fa-bars { /* Piilotetaan hampurilaisvalikko */
+    display: none;
+}
+
+/* Visible classin display block, twothirds classin sijoitus gridillä 2/3 */
+.visible {
+    display: block;
+}
+
+.twothirds {
+    grid-column: 2/3
+}
+
+
+
+@media only screen and (max-width: 1200px) { /* Responsiivisuuden muotoilu alkaa */
+    nav li>div {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 889px) {
+    nav li>div {
+        font-size: 1.25em;
+    }
+
+    footer {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /*kun alle 768px leveys piilotetaan valikko ja siitä tulee navbar*/
+    nav li>div {
+        font-size: 1em;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .fullArticle {
+        grid-column: 1/3;
+    }
+
+    #mainHeader {
+        font-size: 2.5em;
+    } 
+
+    .fa-bars {
+        display: inline;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+}

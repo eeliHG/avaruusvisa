@@ -1,0 +1,18 @@
+/* Karusellin muotoilu alkaa */
+.carousel-caption h5 {
+    font-size: 4em;
+ }
+
+.carousel-caption p{
+    font-size: 1.5em;
+}
+
+.carousel-item {
+    height: 76vh;
+}
+
+/* lisätään nämä jotta ei jää tyhjää tilaan karusellin alas */
+.carousel-item img{
+    height: 100%;
+    object-fit: cover;
+}

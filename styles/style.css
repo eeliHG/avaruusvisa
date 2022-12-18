@@ -1,0 +1,11 @@
+/* Karusellin muotoilu alkaa */
+.carousel-caption h5 {
+    font-size: 4em;
+ }
+ .carousel-caption p{
+    font-size: 1.5em;
+ }
+
+.carousel-item {
+    height: 76vh;
+}
